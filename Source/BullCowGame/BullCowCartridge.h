@@ -14,8 +14,13 @@ class BULLCOWGAME_API UBullCowCartridge : public UCartridge
 	public:
 	virtual void BeginPlay() override;
 	virtual void OnInput(const FString& Input) override;
+	virtual FString GetRandomHiddenWord();
+	virtual bool IsAnswerCorrect(const FString& Answer);
+	virtual void InitGame();
 
 	// Your declarations go below!
 	private:
-	virtual FString GetRandomHiddenWord();
+	FString HiddenWord;
+	TArray<FString> HamsterNames;
+	int32 RemainingAttempts;
 };
